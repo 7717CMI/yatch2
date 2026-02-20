@@ -29,12 +29,17 @@ export function YearRangeSlider() {
   }
 
   const setPredefinedRange = (range: 'historical' | 'forecast' | 'all') => {
+    const { historical_years, forecast_years } = data.metadata
     switch (range) {
       case 'historical':
-        updateFilters({ yearRange: [start_year, base_year - 1] })
+        if (historical_years?.length) {
+          updateFilters({ yearRange: [historical_years[0], historical_years[historical_years.length - 1]] })
+        }
         break
       case 'forecast':
-        updateFilters({ yearRange: [base_year, forecast_year] })
+        if (forecast_years?.length) {
+          updateFilters({ yearRange: [forecast_years[0], forecast_years[forecast_years.length - 1]] })
+        }
         break
       case 'all':
         updateFilters({ yearRange: [start_year, forecast_year] })
@@ -115,7 +120,7 @@ export function YearRangeSlider() {
 
       {/* Base Year Indicator */}
       <div className="text-xs text-black text-center">
-        Base Year: <span className="font-medium text-black">2025</span>
+        Base Year: <span className="font-medium text-black">2023</span>
       </div>
     </div>
   )

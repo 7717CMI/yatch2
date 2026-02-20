@@ -1152,9 +1152,8 @@ async function processSegmentTypeAsync(
           cagr = data.CAGR
         }
       } else {
-        // Calculate CAGR from base year to forecast year
-        // Base year = midpoint - 1 (e.g., 2024 for 2019-2031 range)
-        const cagrStartYear = Math.floor((allYears[0] + allYears[allYears.length - 1]) / 2) - 1
+        // Calculate CAGR from base year (2023) to forecast year
+        const cagrStartYear = allYears[0] + 4 // Base year = 2023 for 2019-2031 data
         const cagrEndYear = allYears[allYears.length - 1]
         const startVal = timeSeries[cagrStartYear] || 0
         const endVal = timeSeries[cagrEndYear] || 0
@@ -1234,8 +1233,10 @@ export async function processJsonDataAsync(
     }
     const startYear = Math.min(...allYears)
     const forecastYear = Math.max(...allYears)
-    const baseYear = Math.floor((startYear + forecastYear) / 2) - 1
-    console.log(`Years: ${startYear} to ${forecastYear}, base: ${baseYear}`)
+    const baseYear = startYear + 4 // Base year = 2023 for 2019-2031 data
+    // Historical/Forecast split at midpoint (2025/2026), independent of base year
+    const historicalEndYear = Math.floor((startYear + forecastYear) / 2) // 2025
+    console.log(`Years: ${startYear} to ${forecastYear}, base: ${baseYear}, historical end: ${historicalEndYear}`)
     
     // Extract geographies from segmentation data (first level keys)
     // This is truly dynamic - works with any structure (global, country, region, etc.)
@@ -1459,8 +1460,8 @@ export async function processJsonDataAsync(
       start_year: startYear,
       base_year: baseYear,
       forecast_year: forecastYear,
-      historical_years: allYears.filter(y => y < baseYear),
-      forecast_years: allYears.filter(y => y >= baseYear),
+      historical_years: allYears.filter(y => y <= historicalEndYear),
+      forecast_years: allYears.filter(y => y > historicalEndYear),
       currency: 'USD',
       value_unit: 'Million',
       volume_unit: 'Million Units',
