@@ -1233,9 +1233,9 @@ export async function processJsonDataAsync(
     }
     const startYear = Math.min(...allYears)
     const forecastYear = Math.max(...allYears)
-    const baseYear = startYear + 4 // Base year = 2023 for 2019-2031 data
-    // Historical/Forecast split at midpoint (2025/2026), independent of base year
-    const historicalEndYear = Math.floor((startYear + forecastYear) / 2) // 2025
+    const baseYear = startYear + 5 // Base year = 2026 for 2021-2033 data
+    // Historical/Forecast split: years before base year are historical
+    const historicalEndYear = baseYear - 1 // 2025
     console.log(`Years: ${startYear} to ${forecastYear}, base: ${baseYear}, historical end: ${historicalEndYear}`)
     
     // Extract geographies from segmentation data (first level keys)
@@ -1474,7 +1474,7 @@ export async function processJsonDataAsync(
     const metadata: Metadata = {
       market_name: 'Insulin Glargine Market',
       market_type: 'Market Analysis',
-      industry: 'Energy & Power',
+      industry: 'Healthcare & Pharmaceuticals',
       years: allYears,
       start_year: startYear,
       base_year: baseYear,
