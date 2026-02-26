@@ -299,21 +299,21 @@ export default function CustomerIntelligencePropositions({ title, height }: Prop
         <PropositionTable
           groups={proposition1Groups}
           data={proposition1Data}
-          title="Proposition 1 \u2013 Yacht Brokerage Customer Intelligence"
+          title="Yacht Brokerage Customer Intelligence"
         />
       )}
       {activeProposition === 2 && (
         <PropositionTable
           groups={proposition2Groups}
           data={proposition2Data}
-          title="Proposition 2 \u2013 Yacht Management Customer Intelligence"
+          title="Yacht Management Customer Intelligence"
         />
       )}
       {activeProposition === 3 && (
         <PropositionTable
           groups={proposition3Groups}
           data={proposition3Data}
-          title="Proposition 3 \u2013 Yacht Charter Customer Intelligence"
+          title="Yacht Charter Customer Intelligence"
         />
       )}
     </div>
