@@ -1,28 +1,100 @@
 {
   "Global": {
-    "By Type": {
-      "Sub-Normothermic Perfusion (20–34°C)": {},
-      "Warm or Normothermic Perfusion (35–37°C)": {}
+    "By Service": {
+      "Yacht Brokerage Service": {
+        "New Build Brokerage": {},
+        "Pre Owned Yacht Brokerage": {},
+        "Sale And Purchase Advisory": {}
+      },
+      "Yacht Management Service": {
+        "Full Scope Yacht Management": {},
+        "Technical Management Only": {},
+        "Crew Management Only": {},
+        "Compliance And Regulatory Management Only": {},
+        "Financial And Accounting Management Only": {}
+      },
+      "Yacht Charter Service": {}
     },
-    "By Organ Type": {
-      "Liver": {},
-      "Heart": {},
-      "Lung": {},
-      "Kidney": {},
-      "Others (Pancreas, Small bowel / Intestine, Composite Tissues / Limb Perfusion (emerging use cases))": {}
+    "By length": {
+      "Below 30 Meters": {},
+      "30-50 Meters": {},
+      "50-70 Meters": {},
+      "70-100 Meters": {},
+      "Above 100 Meters": {}
     },
-    "Application / Use Case": {
-      "Organ Preservation": {},
-      "Viability Assessment": {},
-      "Physiologic Transport": {},
-      "Reconditioning Marginal Organs": {},
-      "Others (Research Use / Protocol development)": {}
+    "By Service, By length": {
+      "Yacht Brokerage Service by Length": {
+        "New Build Brokerage": {
+          "Below 30 Meters": {},
+          "30-50 Meters": {},
+          "50-70 Meters": {},
+          "70-100 Meters": {},
+          "Above 100 Meters": {}
+        },
+        "Pre Owned Yacht Brokerage": {
+          "Below 30 Meters": {},
+          "30-50 Meters": {},
+          "50-70 Meters": {},
+          "70-100 Meters": {},
+          "Above 100 Meters": {}
+        },
+        "Sale And Purchase Advisory": {
+          "Below 30 Meters": {},
+          "30-50 Meters": {},
+          "50-70 Meters": {},
+          "70-100 Meters": {},
+          "Above 100 Meters": {}
+        }
+      },
+      "Yacht Management Service by Length": {
+        "Full Scope Yacht Management": {
+          "Below 30 Meters": {},
+          "30-50 Meters": {},
+          "50-70 Meters": {},
+          "70-100 Meters": {},
+          "Above 100 Meters": {}
+        },
+        "Technical Management Only": {
+          "Below 30 Meters": {},
+          "30-50 Meters": {},
+          "50-70 Meters": {},
+          "70-100 Meters": {},
+          "Above 100 Meters": {}
+        },
+        "Crew Management Only": {
+          "Below 30 Meters": {},
+          "30-50 Meters": {},
+          "50-70 Meters": {},
+          "70-100 Meters": {},
+          "Above 100 Meters": {}
+        },
+        "Compliance And Regulatory Management Only": {
+          "Below 30 Meters": {},
+          "30-50 Meters": {},
+          "50-70 Meters": {},
+          "70-100 Meters": {},
+          "Above 100 Meters": {}
+        },
+        "Financial And Accounting Management Only": {
+          "Below 30 Meters": {},
+          "30-50 Meters": {},
+          "50-70 Meters": {},
+          "70-100 Meters": {},
+          "Above 100 Meters": {}
+        }
+      },
+      "Yacht Charter Service By Length": {
+        "Below 30 Meters": {},
+        "30-50 Meters": {},
+        "50-70 Meters": {},
+        "70-100 Meters": {},
+        "Above 100 Meters": {}
+      }
     },
-    "By End User": {
-      "Hospitals & Clinics": {},
-      "Specialty Clinic/Centers": {},
-      "Transplant Centers": {},
-      "Others (Research Institutes/Centers, Organ Procurement Organizations, etc.)": {}
+    "By Propulsion Type": {
+      "Conventional Diesel Propulsion": {},
+      "Diesel-electric Propulsion": {},
+      "Others (Hybrid, Waterjet propulsion, Gas Turbine, etc.)": {}
     },
     "By Region": {
       "North America": {

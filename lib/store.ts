@@ -135,8 +135,9 @@ function getDefaultOpportunityFilters(data: ComparisonData | null): FilterState 
   const baseYear = data.metadata.base_year
   const forecastYear = data.metadata.forecast_year
   
-  // For opportunity matrix, default to first geography (usually India or global)
-  const firstGeography = data.dimensions.geographies.all_geographies?.[0] || ''
+  // For opportunity matrix, default to first main region (not countries)
+  const regions = data.dimensions.geographies.regions || []
+  const firstGeography = regions.length > 0 ? regions[0] : (data.dimensions.geographies.all_geographies?.[0] || '')
   
   // For opportunity matrix, don't pre-select segments - let user select them
   // This avoids issues where segments don't match the actual data structure
